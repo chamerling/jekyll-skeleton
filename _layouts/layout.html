@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>{{ page.title }}</title>
+  <meta name="author" content="{{ site.author }}" />
+  <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/{{ site.feedburner }}" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+  <link rel="stylesheet" href="/css/jquery.tweet.css" type="text/css" />
+  <!-- Title font -->
+  <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+  <!-- post content font -->
+  <!--<link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>-->
+  <!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>-->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script type="text/javascript" src="/js/jquery.tweet.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      {{ page.script }}
+    });
+  </script>
+  <script type="text/javascript">
+
+   	$(document).ready(function(){
+	        $(".tweet").tweet({
+	            username: "{{ site.twitter }}",
+	            join_text: "auto",
+	            avatar_size: 16,
+	            count: 4,
+	            auto_join_text_default: "", 
+	            auto_join_text_ed: "",
+	            auto_join_text_ing: "",
+	            auto_join_text_reply: "",
+	            auto_join_text_url: "",
+	            loading_text: "Loading Tweets...",
+				refresh_interval: 60
+	        });
+	    });
+  </script>
+</head>
+<body>
+	
+<div id="header">
+  <a href="/">
+    <img src="http://www.gravatar.com/avatar/{{ site.gravatar }}?s=130" height="130" width="130" class="avatar" />
+  </a>
+
+  <div id="me">
+    <a href="/">
+      <span id="christophe">{{ site.title }}</span>
+      <span id="hamerling">{{ site.subtitle }}</span>
+    </a>
+  </div>
+
+  <div id="tweets">
+  <div class='tweet query'></div>
+  </div>
+<!--
+  <div id="mousing">&nbsp;</div>
+  <div class="site">
+    <a href="https://github.com/chamerling" id="github">
+      <img src="/images/github.png" alt="github" title="@chamerling on GitHub" height="16" width="16" />
+    </a>
+    <a href="https://twitter.com/chamerling" id="twitter">
+      <img src="/images/twitter.png" alt="twitter" title="@chamerling on Twitter" height="16" width="16" />
+    </a>
+    <a href="http://feeds.feedburner.com/christophehamerling" id="rss">
+      <img src="/images/rss.png" alt="rss" title="Subscribe to this blog's RSS feed" height="16" width="16" />
+    </a>
+  </div>
+
+  <div id="sections">
+    <div><a href="/about.html">A propos</a></div>
+  </div>
+-->
+</div>
+
+
+{{ content }}
+
+
+<a href="http://github.com/chamerling/jekyll-skeleton/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ site.ga }}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
